@@ -19,6 +19,20 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
 ### STEP 2-1
 ![截圖 2023-11-25 上午12 31 28](https://github.com/yenming/line-rich-menus/assets/7127769/6d1ce6ec-ffb5-48e2-970f-131455ebe84c)
 
+### STEP 2-2
+![截圖 2023-11-25 上午12 34 06](https://github.com/yenming/line-rich-menus/assets/7127769/3a92b739-8813-4c8f-add2-04cc93ebbae9)
+
+
+### STEP 2-3
+
+![截圖 2023-11-25 上午12 36 44](https://github.com/yenming/line-rich-menus/assets/7127769/86f58b54-f8a5-401c-a4f2-afbffbfb86b8)
+
+
+
+### STEP 2-4
+![截圖 2023-11-25 上午12 36 36](https://github.com/yenming/line-rich-menus/assets/7127769/327e5dbe-2ecb-4bfd-a43c-572eb4af1c0e)
+
+
 
 ```
 
