@@ -215,7 +215,7 @@ data: 透過 webhook 回傳到後端的字串
 
 1.首先程式碼建議是分開存哦，尤其新手很容犯錯誤，所以上一步驟的每一個richMenuId都有自己的程式碼，傳圖片也比照辦理。所以我們可以命名檔案叫做image menu-a (然後因為要上傳四張，所以 b c d就分別寫一支)
 
-2.上方欄位一樣是要選POST哦，填入  https://api-data.line.me/v2/bot/richmenu/{rich menu id}/content  ，將上步驟得到的對應 {rich menu id} 帶入網址。所以，看是要要上傳哪張圖文選單，就放他的richMenuId到網址內
+2.上方欄位一樣是要選POST哦，填入  https://api-data.line.me/v2/bot/richmenu/{richMenuId}/content  ，將上步驟得到的對應 {rich menu id} 帶入網址。所以，看是要要上傳哪張圖文選單，就放他的richMenuId到網址內
 
 3.欄位Authorization 選擇 Bearer 然後一樣填入步驟二的 channel access token
 
@@ -224,9 +224,7 @@ data: 透過 webhook 回傳到後端的字串
 欄位Body那邊選擇 binary ，接著選擇對應的圖文選單上傳，最後按送出後，如果回傳狀態碼 200 與 {}， 代表成功！四張都傳上去哦！
 
 
-```
 
-```
 
 ## STEP 5 自定義連動 Rich Menu 別名
 
