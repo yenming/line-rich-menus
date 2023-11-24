@@ -61,7 +61,7 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
   },
   "selected": false,
   "name": "richmenu-a",
-  "chatBarText": "開啟數位營運術",
+  "chatBarText": "開啟數位營運術", // 這邊是底下Menu Bar的內容
   "areas": [
     {
       "bounds": {
@@ -70,10 +70,11 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
         "width": 1250,
         "height": 145
       },
+        // 核心切換
       "action": {
         "type": "richmenuswitch",
         "richMenuAliasId": "richmenu-b",
-        "data": "richmenu-changed-to-b"  // 修改此處引號的問題
+        "data": "richmenu-changed-to-b"  
       }
     },
     {
@@ -117,7 +118,7 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
   },
   "selected": true,
   "name": "richmenu-b",
-  "chatBarText": "萬能店小二",  // 修正引號使用錯誤
+  "chatBarText": "萬能店小二",  // 這邊是底下Menu Bar的內容
   "areas": [
     {
       "bounds": {
@@ -126,10 +127,11 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
         "width": 1246,
         "height": 112
       },
+     // 核心切換
       "action": {
         "type": "richmenuswitch",
         "richMenuAliasId": "richmenu-a",
-        "data": "richmenu-changed-to-a"  // 修正引號使用錯誤
+        "data": "richmenu-changed-to-a"
       }
     },
     {
@@ -160,9 +162,38 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
 }
 
 
-
-
 ```
+
+
+補充說明：
+
+size: 圖文選單圖片的長寬，必需為以下尺寸: 2500x1686、2500x843、1200x810、1200x405、800x540、800x270
+
+selected: 選單是否預設開啟，我們設定為 true，預設開啟。
+
+name: 選單名稱，用於識別和管理選單，不會顯示給使用者。
+
+chatBarText: 顯示在聊天視窗圖文選單下方的選單文字。
+
+areas: 用於定義按鈕的可點墼區域。
+
+bounds 用於定義座標和大小
+
+x、y: 起始座標
+
+width: 寬度
+
+height: 高度
+
+action 用於定義觸發的動作
+
+type: 動作類型
+
+label: 動作標籤
+
+text: 發送到聊天視窗的文字
+
+data: 透過 webhook 回傳到後端的字串
 
 
 ### STEP 3-2
