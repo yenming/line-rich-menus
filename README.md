@@ -41,10 +41,8 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
 ### STEP 3-1
 <ol>
   <li>
-    上方欄位POST 填入 
-      ```
-        https://api.line.me/v2/bot/richmenu
-      ```
+    上方欄位POST 填入 <https://api.line.me/v2/bot/richmenu>
+    
   </li>
   <li>
     欄位Authorization 選擇 Bearer 然後填入步驟二的 channel access token。
