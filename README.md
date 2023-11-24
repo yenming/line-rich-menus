@@ -215,7 +215,7 @@ data: 透過 webhook 回傳到後端的字串
 
 1.首先程式碼建議是分開存哦，尤其新手很容犯錯誤，所以上一步驟的每一個richMenuId都有自己的程式碼，傳圖片也比照辦理。所以我們可以命名檔案叫做image menu-a (然後因為要上傳四張，所以 b c d就分別寫一支)
 
-2.上方欄位一樣是要選POST哦，填入 <https://api-data.line.me/v2/bot/richmenu/{rich menu id}/content>，將上步驟得到的對應 {rich menu id} 帶入網址。所以，看是要要上傳哪張圖文選單，就放他的richMenuId到網址內
+2.上方欄位一樣是要選POST哦，填入  https://api-data.line.me/v2/bot/richmenu/{rich menu id}/content  ，將上步驟得到的對應 {rich menu id} 帶入網址。所以，看是要要上傳哪張圖文選單，就放他的richMenuId到網址內
 
 3.欄位Authorization 選擇 Bearer 然後一樣填入步驟二的 channel access token
 
@@ -223,19 +223,60 @@ data: 透過 webhook 回傳到後端的字串
 
 欄位Body那邊選擇 binary ，接著選擇對應的圖文選單上傳，最後按送出後，如果回傳狀態碼 200 與 {}， 代表成功！四張都傳上去哦！
 
+
 ```
 
 ```
 
 ## STEP 5 自定義連動 Rich Menu 別名
 
+這個關鍵步驟，我們需要將先前建立圖文選單的別名 Alias 分配給 Rich Menu a, b, c, d，這樣才能互相連動起來～
+記得嗎？因為在創建的程式碼中，我們有使用 
+"type": "richmenuswitch","richMenuAliasId": "richmenu-b", 
+這樣的語法（回去看你跑的程式碼～～有沒有看到呀）...
+意思是點選這個區域後LINE圖文選單要switch去另外一個別名叫做richmenu-b的圖文選單，但是要是我們沒有在這步驟，
+把定義傳送給LINE，他根本也不會知道誰是richmenu-b，因為我們寫richmenu-a時，
+richmenu-b的richMenuId還沒生出來呢，對吧？所以囉，這邊算是一個把該『連結』的，都連起來的關鍵步驟！
+
+一樣記得再開新檔案哦！上方欄位POST 填入 https://api.line.me/v2/bot/richmenu/alias
+
+欄位Authorization 選擇 Bearer 然後一樣填入步驟二你的 channel access token
+
+欄位Header裡面欄位Key填入Content-Type，欄位Value填入 application/json
+
+欄位Body那邊raw帶入json程式碼，範例如下。最後按送出會狀態碼 200 與 {}，代表成功！
+
+四個Alias都要做哦。
+
+
 ```
+{
+  "richMenuId": "richmenu-70b6550f5a2f7eaa6ffddcd70b6c9a05",
+  "richMenuAliasId": "richmenu-b"
+}
 
 ```
 
 ## STEP 6 設定哪一個圖文選單是預設出現
 
+上方欄位POST 填入 https://api.line.me/v2/bot/user/all/richmenu/
+
+欄位Authorization 選擇 Bearer 然後一樣填入步驟二的 channel access token
+
+欄位Header裡面欄位Key填入Content-Type，欄位Value填入 application/json
+
+欄位Body那邊帶入json程式碼，範例如下。最後按送出會狀態碼 200 與 {}，代表成功！
+
 ```
+{
+    "richMenuId": "richmenu-ecac97ec7caea9757c1e81d7f9999e31"
+}
 
 ```
 
+
+## STEP  上傳錯要改圖
+
+上方欄位是改成選DELETE哦，填入 https://api.line.me/v2/bot/richmenu/{rich menu id}/，其他看是哪一個圖文選單需要刪除原本的圖，就把上步驟得到的對應 {rich menu id} 帶入網址。欄位Authorization 和欄位Header都和上傳時填一樣
+
+得到狀態碼 200 與 {}， 代表成功刪除，就可以再重新上傳新圖。
