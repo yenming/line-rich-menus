@@ -39,21 +39,14 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
 ## STEP 3 透過Postman取得richMenuId
 
 ### STEP 3-1
-<ol>
-  <li>
-    上方欄位POST 填入 <https://api.line.me/v2/bot/richmenu>
-    
-  </li>
-  <li>
-    欄位Authorization 選擇 Bearer 然後填入步驟二的 channel access token。
-  </li>
-  <li>
-    欄位Header裡面欄位Key填入Content-Type，欄位Value填入 application/json。
-  </li>
-  <li>
-    欄位Body下選raw，在raw內帶入json程式碼，範例如下。最後按送出會回傳 rich menu id，後面 API 會使用到。
-  </li>
-</ol>
+
+    1.上方欄位POST 填入 <https://api.line.me/v2/bot/richmenu>
+
+    2.欄位Authorization 選擇 Bearer 然後填入步驟二的 channel access token。
+
+    3.欄位Header裡面欄位Key填入Content-Type，欄位Value填入 application/json。
+
+    4.欄位Body下選raw，在raw內帶入json程式碼，範例如下。最後按送出會回傳 rich menu id，後面 API 會使用到。
 
 
 
