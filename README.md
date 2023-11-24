@@ -14,9 +14,13 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
 
 ## STEP 2 到LINE Developer後台設定 【Provider】
 
+到 <a href ="https://developers.line.biz/zh-hant/"> LINE Developer</a>後台設定畫面，點選 Create a new provider -> Create a Messaging API channel 畫面，把資料填一填後，得到一個Channel access token，把他複製起來。
+
+
 ```
 
 ```
+
 
 ## STEP 3 透過postman取得richMenuId
 
