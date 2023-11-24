@@ -38,6 +38,7 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
 
 ## STEP 3 透過Postman取得richMenuId
 
+
 ### STEP 3-1
 
     1.上方欄位POST 填入 <https://api.line.me/v2/bot/richmenu>
@@ -50,10 +51,119 @@ LINE圖文選單（LINE Rich Menu）是LINE即時通訊應用程式上的一種�
 
 
 
+參考SAMPLE 1 - richmenu-a
+
 ```
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": false,
+  "name": "richmenu-a",
+  "chatBarText": "開啟數位營運術",
+  "areas": [
+    {
+      "bounds": {
+        "x": 1250,
+        "y": 4,
+        "width": 1250,
+        "height": 145
+      },
+      "action": {
+        "type": "richmenuswitch",
+        "richMenuAliasId": "richmenu-b",
+        "data": "richmenu-changed-to-b"  // 修改此處引號的問題
+      }
+    },
+    {
+      "bounds": {
+        "x": 1601,
+        "y": 173,
+        "width": 899,
+        "height": 671
+      },
+      "action": {
+        "type": "message",
+        "text": "/預約諮詢"
+      }
+    },
+    {
+      "bounds": {
+        "x": 58,
+        "y": 169,
+        "width": 1485,
+        "height": 660
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://www.everise.digital/"
+      }
+    }
+  ]
+}
+
+
+
+```
+
+參考SAMPLE 2 - richmenu-b
+
+```
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "richmenu-b",
+  "chatBarText": "萬能店小二",  // 修正引號使用錯誤
+  "areas": [
+    {
+      "bounds": {
+        "x": 8,
+        "y": 12,
+        "width": 1246,
+        "height": 112
+      },
+      "action": {
+        "type": "richmenuswitch",
+        "richMenuAliasId": "richmenu-a",
+        "data": "richmenu-changed-to-a"  // 修正引號使用錯誤
+      }
+    },
+    {
+      "bounds": {
+        "x": 1625,
+        "y": 1011,
+        "width": 780,
+        "height": 631
+      },
+      "action": {
+        "type": "message",
+        "text": "/預約機器人試用"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1407,
+        "y": 247,
+        "width": 1048,
+        "height": 635
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://www.everise.digital/robot"
+      }
+    }
+  ]
+}
+
+
 
 
 ```
+
 
 ### STEP 3-2
 
